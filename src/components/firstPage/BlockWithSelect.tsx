@@ -1,6 +1,5 @@
 import React from 'react';
-import Select from 'react-select';
-import {BlockWrapper, BlockTitle} from "./Block.styles";
+import {BlockWrapper, BlockTitle, StylizedSingleSelect} from "./Block.styles";
 
 type Props = {
     title: string,
@@ -8,29 +7,11 @@ type Props = {
 }
 
 
-const BlockWithSelect = ({title, options} : Props) => {
+const BlockWithSelect = ({title, options}: Props) => {
     return (
         <BlockWrapper>
             <BlockTitle>{title}</BlockTitle>
-            <Select options={options} styles={{
-                control: (provided) => ({
-                    ...provided,
-                    backgroundColor: 'transparent',
-                    border: 'none',
-                    boxShadow: 'none',
-                    '&:hover': {
-                        border: 'none',
-                    },
-
-                }),
-                indicatorSeparator: () => ({
-                    display: 'none',
-                }),
-                singleValue: (provided) => ({
-                    ...provided,
-                    color: 'white',
-                }),
-            }} />
+            <StylizedSingleSelect options={options} classNamePrefix="Select"/>
         </BlockWrapper>);
 };
 

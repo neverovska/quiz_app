@@ -8,12 +8,12 @@ const Greetings = styled.p`
   font-weight: bold;
   text-align: start;
   margin: 5vh 0;
-`
+`;
 
 const MainWrapper = styled.main`
   width: 50%;
   margin: 0 auto;
-`
+`;
 
 const BlocksContainer = styled.div`
   display: grid;
@@ -21,13 +21,12 @@ const BlocksContainer = styled.div`
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
   margin: 20px 0;
-`
+`;
 
 const GreetingsContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  
-`
+`;
 
 const Statistics = styled.button`
   all: unset;

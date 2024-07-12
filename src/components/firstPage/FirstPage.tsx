@@ -5,6 +5,7 @@ import BlockWithInput from "./BlockWithInput";
 import ButtonStart from "./ButtonStart";
 import {faChartSimple} from "@fortawesome/free-solid-svg-icons"
 import {Greetings, MainWrapper, BlocksContainer, Statistics, GreetingsContainer, Icon} from "./FirstPage.styles";
+import {TIMES, LEVELS, TYPES, CATEGORIES} from "../../consts";
 
 
 const FirstPage = () => {
@@ -17,25 +18,17 @@ const FirstPage = () => {
                 </Statistics>
             </GreetingsContainer>
 
-            <BlockWithMultiSelect title="Category" options={[
-                {value: 'all', label: 'All'},
-                {value: '1cat', label: '1cat'},
-                {value: '2cat', label: '2cat'},
-                {value: '3cat', label: '3cat'},]}/>
+            <BlockWithMultiSelect title="Category"
+                                  options={CATEGORIES.map((cat) => ({value: cat, label: cat}))}/>
             <BlocksContainer>
-                <BlockWithSelect title="Time" options={[
-                    {value: '1', label: '1 min'},
-                    {value: '2', label: '2 min'},
-                    {value: '5', label: '5 min'},
-                ]}/>
-                <BlockWithSelect title="Type" options={[
-                    {value: 'easy', label: 'Easy'},
-                    {value: 'medium', label: 'Medium'},
-                    {value: 'hard', label: 'Hard'},]}/>
-                <BlockWithSelect title="Category" options={[{
-                    value: 'chocolate', label: 'Chocolate'
-                }]}/>
-                <BlockWithInput/>
+                <BlockWithSelect
+                    title="Time"
+                    options={TIMES.map((time) => ({value: time, label: `${time} min`}))}
+                />
+                <BlockWithSelect title="Difficulty" options={LEVELS.map((level) => ({value: level, label: level}))}/>
+                <BlockWithSelect title="Type"
+                                 options={TYPES.map((type) => ({value: type, label: type}))}/>
+                <BlockWithInput title="Number of questions" minQuestions={5} maxQuestions={15}/>
             </BlocksContainer>
             <ButtonStart/>
         </MainWrapper>
