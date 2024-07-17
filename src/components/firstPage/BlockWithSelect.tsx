@@ -1,7 +1,7 @@
 import React from 'react';
 import {BlockWrapper, BlockTitle, StylizedSingleSelect} from "./Block.styles";
 
-type Props = {
+interface Props {
     title: string,
     options: Array<object>
 }

@@ -36,10 +36,10 @@ const Statistics = styled.button`
   }
 `;
 
-const Icon = styled(FontAwesomeIcon)`
+const IconStats = styled(FontAwesomeIcon)`
   margin: 0 5px;
   color: white;
 `;
 
 
-export  {Greetings, MainWrapper, BlocksContainer, Statistics, GreetingsContainer, Icon};
+export  {Greetings, MainWrapper, BlocksContainer, Statistics, GreetingsContainer, IconStats};

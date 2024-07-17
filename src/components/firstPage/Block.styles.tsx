@@ -1,5 +1,25 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import Select from "react-select";
+
+const BasicSelectStyles = css`
+  &__control {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+  }
+
+  &__control:hover {
+    border: none;
+  }
+
+  &__indicator-separator {
+    display: none;
+  }
+
+  &__input {
+    caret-color: transparent;
+  }
+`;
 
 const BlockWrapper = styled.div`
   border-radius: 10px;
@@ -34,64 +54,33 @@ const NumberInput = styled.input`
 `;
 
 const StylizedMultiSelect = styled(Select)`
-  .Select__control {
-    background-color: transparent;
-    border: none;
-    box-shadow: none;
-  }
+  .Select {
+    ${BasicSelectStyles}
+    &__multi-value {
+      background: linear-gradient(90deg, rgba(59, 49, 242, 1) 0%, rgba(116, 28, 236, 1) 100%);
+    }
 
-  .Select__control:hover {
-    border: none;
-  }
+    &__multi-value__label {
+      color: white;
+    }
 
-  .Select__indicator-separator {
-    display: none;
-  }
+    &__multi-value__remove {
+      color: white;
+    }
 
-  .Select__multi-value {
-    background: linear-gradient(90deg, rgba(59, 49, 242, 1) 0%, rgba(116, 28, 236, 1) 100%);
-  }
-
-  .Select__multi-value__label {
-    color: white;
-  }
-
-  .Select__multi-value__remove {
-    color: white;
-  }
-
-  .Select__multi-value__remove:hover {
-    background-color: white;
-    color: red;
-  }
-
-  .Select__input {
-    caret-color: transparent;
+    &__multi-value__remove:hover {
+      background-color: white;
+      color: red;
+    }
   }
 `;
 
 const StylizedSingleSelect = styled(Select)`
-  .Select__control {
-    background-color: transparent;
-    border: none;
-    box-shadow: none;
-  }
-
-  .Select__control:hover {
-    border: none;
-  }
-
-  .Select__indicator-separator {
-    display: none;
-  }
-
-  .Select__single-value {
-
-    color: white;
-  }
-
-  .Select__input {
-    caret-color: transparent;
+  .Select {
+    ${BasicSelectStyles}
+    &__single-value {
+      color: white;
+    }
   }
 `;
 

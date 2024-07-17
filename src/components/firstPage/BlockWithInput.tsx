@@ -1,7 +1,7 @@
 import React from 'react';
 import {BlockWrapper, BlockTitle, NumberInput} from "./Block.styles";
 
-type Props = {
+interface Props {
     title: string,
     minQuestions: number,
     maxQuestions: number

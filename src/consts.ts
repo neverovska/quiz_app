@@ -1,5 +1,5 @@
 const TIMES = [
-    1, 2, 5
+    "1 min", "2 min", "5 min"
 ];
 
 const LEVELS = [
