@@ -1,46 +1,42 @@
-# Getting Started with Create React App
+# Project
+A simple quiz app built with React and Redux. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Figma Mockup
+https://www.figma.com/design/pKA5WjF6c2mf1YxLStw4jE/quizApp?node-id=0-1&t=aIGX3z26c81txMtl-1
 
-## Available Scripts
+### Hw1
+UI for Start page:
++ Number input for “number of questions”(from 5 to 15)
++ Select input for “category”
++ Select input for “difficulty”
++ Select input for “type”
++ Select input for “time” with values: 1m, 2m, 5m
++ “Start quiz” button
++ “See my stats” button
+### Hw2
+UI for Quiz page:
++ Question text
++ Progress bar (e.g. “question 3 out of 6)
++ “End quiz” button
++ Answer buttons (they could be “true” and “false” for true/false questions or they could be in a group of 4, for multiple option questions)
++ Timer element, which count down from specified value
 
-In the project directory, you can run:
+### Hw3
+UI for Finish page:
++ General result text
++ Result in numbers of correct answers. 
++ Quiz configuration, type, category, time and difficulty
++ Text indicating how much time user took to answer all the questions
++ A button “Restart” which will restart this same quiz with same configuration from the start
++ A button “Choose another quiz” which will navigate the user to quiz configuration screen
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Hw4
+Navigation for app:
++ Upon pressing the “Start quiz” button from the first screen we navigate to the main quiz screen. (With mock data for now)
++ Upon pressing the “End quiz” button on the main quiz screen we should see a modal window with some text and 2 buttons - “Cancel” and “Confirm”.
++ Upon pressing “Cancel” button, we just close this modal window
++ Upon pressing “Confirm” button we need to navigate user back to configuration screen
++ After answering the last question or if timer ends on the main quiz screen, we need to navigate users to the result screen
++ On the result screen upon pressing the “Choose another quiz” button we need to navigate users to quiz configuration screen
++ On the result screen upon pressing the “Restart quiz” button we need to navigate users to main quiz screen and restart current quiz (with mock data for now)
++ On the configuration scream upon pressing the “See my statistics” button we need to navigate to the newly created empty statistics screen
