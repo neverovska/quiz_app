@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Greetings = styled.p`
   color: white;
@@ -8,11 +8,6 @@ const Greetings = styled.p`
   font-weight: bold;
   text-align: start;
   margin: 5vh 0;
-`;
-
-const MainWrapper = styled.main`
-  width: 50%;
-  margin: 0 auto;
 `;
 
 const BlocksContainer = styled.div`
@@ -31,6 +26,7 @@ const GreetingsContainer = styled.div`
 const Statistics = styled.button`
   all: unset;
   color: #ccc;
+
   &:hover {
     color: white;
   }
@@ -41,5 +37,10 @@ const IconStats = styled(FontAwesomeIcon)`
   color: white;
 `;
 
-
-export  {Greetings, MainWrapper, BlocksContainer, Statistics, GreetingsContainer, IconStats};
+export {
+  Greetings,
+  BlocksContainer,
+  Statistics,
+  GreetingsContainer,
+  IconStats,
+};

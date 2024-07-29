@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Window = styled.div`
   border-radius: 10px;
@@ -15,7 +15,7 @@ const Window = styled.div`
 `;
 
 const IconExit = styled(FontAwesomeIcon)`
-  color: #FF3939;
+  color: #ff3939;
   position: absolute;
   top: 5%;
   left: 4%;
@@ -25,12 +25,12 @@ const IconExit = styled(FontAwesomeIcon)`
   }
 `;
 
-const QuestionWrapper = styled.div `
-    margin: 10px 0;
+const QuestionWrapper = styled.div`
+  margin: 10px 0;
 `;
 
 const QuestionText = styled.p`
   color: white;
 `;
 
-export {Window, QuestionWrapper, QuestionText, IconExit}
+export { Window, QuestionWrapper, QuestionText, IconExit };
