@@ -7,7 +7,7 @@ import {faChartSimple} from "@fortawesome/free-solid-svg-icons"
 import {Greetings, MainWrapper, BlocksContainer, Statistics, GreetingsContainer, IconStats} from "./FirstPage.styles";
 import {TIMES, LEVELS, TYPES, CATEGORIES} from "../../consts";
 
-const SelectFilling = (item: string) => ({value: item, label: item});
+const selectFilling = (item: string) => ({value: item, label: item});
 
 
 const FirstPage = () => {
@@ -21,15 +21,15 @@ const FirstPage = () => {
             </GreetingsContainer>
 
             <BlockWithMultiSelect title="Category"
-                                  options={CATEGORIES.map(SelectFilling)}/>
+                                  options={CATEGORIES.map(selectFilling)}/>
             <BlocksContainer>
                 <BlockWithSelect
                     title="Time"
-                    options={TIMES.map(SelectFilling)}
+                    options={TIMES.map(selectFilling)}
                 />
-                <BlockWithSelect title="Difficulty" options={LEVELS.map(SelectFilling)}/>
+                <BlockWithSelect title="Difficulty" options={LEVELS.map(selectFilling)}/>
                 <BlockWithSelect title="Type"
-                                 options={TYPES.map(SelectFilling)}/>
+                                 options={TYPES.map(selectFilling)}/>
                 <BlockWithInput title="Number of questions" minQuestions={5} maxQuestions={15}/>
             </BlocksContainer>
             <ButtonStart/>
