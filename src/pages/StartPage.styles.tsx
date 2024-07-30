@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {BasicButtonStyles} from "../general.styles";
 
 const Greetings = styled.p`
   color: white;
@@ -37,10 +38,20 @@ const IconStats = styled(FontAwesomeIcon)`
   color: white;
 `;
 
+const ButtonStart = styled.button`
+  ${BasicButtonStyles};
+  background: linear-gradient(
+    90deg,
+    rgba(15, 66, 247, 1) 0%,
+    rgba(172, 7, 230, 1) 100%
+  );
+`;
+
 export {
   Greetings,
   BlocksContainer,
   Statistics,
   GreetingsContainer,
   IconStats,
+  ButtonStart
 };
