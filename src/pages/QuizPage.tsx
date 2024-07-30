@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { MainWrapper, PageWrapper } from "./QuizPage.styles";
-import Timer from "./Timer";
-import QuestionWindow from "./QuestionWindow";
-import { questions } from "../../consts";
+import Timer from "../components/quizPage/Timer";
+import QuestionWindow from "../components/quizPage/QuestionWindow";
+import { questions } from "../consts";
 
 const QuizPage = () => {
   const [currentQ, setCurrentQ] = useState(0); // TODO: move state logic to redux store

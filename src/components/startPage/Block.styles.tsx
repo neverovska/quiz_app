@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import Select from "react-select";
+import {BasicBlockStyles} from "../../general.styles";
 
 const BasicSelectStyles = css`
   &__control {
@@ -22,7 +23,7 @@ const BasicSelectStyles = css`
 `;
 
 const BlockWrapper = styled.div`
-  ${BasicSelectStyles};
+  ${BasicBlockStyles};
   text-align: start;
   height: 20vh;
   display: flex;

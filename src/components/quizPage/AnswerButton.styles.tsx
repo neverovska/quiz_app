@@ -16,6 +16,10 @@ const StyledAnswerButton = styled.li`
     rgba(59, 49, 242, 1) 0%,
     rgba(116, 28, 236, 1) 100%
   );
+  &:hover {
+    transition: transform 0.5s;
+    transform: scale(1.01);
+  }
 `;
 
 export { StyledAnswerButton };
