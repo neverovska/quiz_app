@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const TimerP = styled.p`
   color: white;
@@ -12,4 +12,4 @@ const IconTime = styled(FontAwesomeIcon)`
   color: white;
 `;
 
-export {TimerP, IconTime}
+export { TimerP, IconTime };

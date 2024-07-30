@@ -1,4 +1,4 @@
-import styled, {css} from "styled-components";
+import styled, { css } from "styled-components";
 import Select from "react-select";
 
 const BasicSelectStyles = css`
@@ -22,10 +22,8 @@ const BasicSelectStyles = css`
 `;
 
 const BlockWrapper = styled.div`
-  border-radius: 10px;
-  background: #404040;
+  ${BasicSelectStyles};
   text-align: start;
-  padding: 3vh 2vh;
   height: 20vh;
   display: flex;
   justify-content: space-between;
@@ -57,7 +55,11 @@ const StylizedMultiSelect = styled(Select)`
   .Select {
     ${BasicSelectStyles}
     &__multi-value {
-      background: linear-gradient(90deg, rgba(59, 49, 242, 1) 0%, rgba(116, 28, 236, 1) 100%);
+      background: linear-gradient(
+        90deg,
+        rgba(59, 49, 242, 1) 0%,
+        rgba(116, 28, 236, 1) 100%
+      );
     }
 
     &__multi-value__label {
@@ -84,4 +86,10 @@ const StylizedSingleSelect = styled(Select)`
   }
 `;
 
-export {BlockTitle, BlockWrapper, NumberInput, StylizedMultiSelect, StylizedSingleSelect};
+export {
+  BlockTitle,
+  BlockWrapper,
+  NumberInput,
+  StylizedMultiSelect,
+  StylizedSingleSelect,
+};

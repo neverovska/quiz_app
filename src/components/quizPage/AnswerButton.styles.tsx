@@ -11,11 +11,11 @@ const StyledAnswerButton = styled.li`
   font-size: 22px;
   font-family: "Gill Sans MT";
   border: none;
-  background: linear-gradient(90deg, rgba(59,49,242,1) 0%, rgba(116,28,236,1) 100%);
-  &:hover {
-    transition: transform 0.5s;
-    transform: scale(1.01);
-  }
+  background: linear-gradient(
+    90deg,
+    rgba(59, 49, 242, 1) 0%,
+    rgba(116, 28, 236, 1) 100%
+  );
 `;
 
-export {StyledAnswerButton};
+export { StyledAnswerButton };

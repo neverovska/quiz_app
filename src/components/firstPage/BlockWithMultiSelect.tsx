@@ -1,19 +1,23 @@
-import React from 'react';
-import {BlockWrapper, BlockTitle, StylizedMultiSelect} from "./Block.styles";
+import React from "react";
+import { BlockWrapper, BlockTitle, StylizedMultiSelect } from "./Block.styles";
 
 interface Props {
-    title: string,
-    options: Array<object>
+  title: string;
+  options: Array<object>;
 }
 
-
-const BlockWithMultiSelect = ({title, options}: Props) => {
-    return (
-        <BlockWrapper>
-            <BlockTitle>{title}</BlockTitle>
-            <StylizedMultiSelect classNamePrefix="Select" isMulti defaultValue={options[0]} options={options}/>
-        </BlockWrapper>
-    );
+const BlockWithMultiSelect = ({ title, options }: Props) => {
+  return (
+    <BlockWrapper>
+      <BlockTitle>{title}</BlockTitle>
+      <StylizedMultiSelect
+        classNamePrefix="Select"
+        isMulti
+        defaultValue={options[0]}
+        options={options}
+      />
+    </BlockWrapper>
+  );
 };
 
 export default BlockWithMultiSelect;
