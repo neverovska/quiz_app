@@ -1,8 +1,8 @@
 import React from "react";
-import Timer from "../quizPage/Timer";
-import { MainWrapper } from "../../general.styles";
-import EndBlockContainer from "./EndBlockContainer";
-import EndButtonsContainer from "./EndButtonsContainer";
+import Timer from "../components/quizPage/Timer";
+import { MainWrapper } from "../general.styles";
+import EndBlockContainer from "../components/finishPage/EndBlockContainer";
+import EndButtonsContainer from "../components/finishPage/EndButtonsContainer";
 import { Gratitude, Result } from "./FinishPage.styles";
 
 interface FinishPageProps {

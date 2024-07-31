@@ -1,8 +1,7 @@
 import React from "react";
-import BlockWithMultiSelect from "./BlockWithMultiSelect";
-import BlockWithSelect from "./BlockWithSelect";
-import BlockWithInput from "./BlockWithInput";
-import ButtonStart from "./ButtonStart";
+import BlockWithMultiSelect from "../components/startPage/BlockWithMultiSelect";
+import BlockWithSelect from "../components/startPage/BlockWithSelect";
+import BlockWithInput from "../components/startPage/BlockWithInput";
 import { faChartSimple } from "@fortawesome/free-solid-svg-icons";
 import {
   Greetings,
@@ -10,18 +9,29 @@ import {
   Statistics,
   GreetingsContainer,
   IconStats,
+  ButtonStart,
 } from "./StartPage.styles";
-import { MainWrapper } from "../../general.styles";
-import { TIMES, LEVELS, TYPES, CATEGORIES } from "../../consts";
+import { MainWrapper } from "../general.styles";
+import { TIMES, LEVELS, TYPES, CATEGORIES } from "../consts";
+import { useNavigate } from "react-router-dom";
 
 const selectFilling = (item: string) => ({ value: item, label: item });
 
 const StartPage = () => {
+  const navigate = useNavigate();
+
+  const goToStats = () => {
+    navigate("/statistics");
+  };
+  const goToQuiz = () => {
+    navigate("/quiz");
+  };
+
   return (
     <MainWrapper>
       <GreetingsContainer>
         <Greetings>Let's play!</Greetings>
-        <Statistics>
+        <Statistics onClick={goToStats}>
           My stats
           <IconStats icon={faChartSimple} />
         </Statistics>
@@ -44,7 +54,7 @@ const StartPage = () => {
           maxQuestions={15}
         />
       </BlocksContainer>
-      <ButtonStart />
+      <ButtonStart onClick={goToQuiz}>Start quiz</ButtonStart>
     </MainWrapper>
   );
 };
