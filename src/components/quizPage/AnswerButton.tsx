@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 interface AnswerProps {
   answer: string;
 }
-
+// TODO: delete
 const AnswerButton = ({ answer }: AnswerProps) => {
   const navigate = useNavigate();
 

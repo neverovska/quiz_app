@@ -1,35 +1,71 @@
-const TIMES = [
-    "1 min", "2 min", "5 min"
+import { Option } from "./slices/configurationSlice";
+
+const TIMES: Option[] = [
+  { value: "60", label: "1 min" },
+  { value: "120", label: "2 min" },
+  { value: "300", label: "5 min" },
 ];
 
-const LEVELS = [
-    "Easy", "Medium", "Hard"
+const LEVELS: Option[] = [
+  { value: "easy", label: "Easy" },
+  { value: "medium", label: "Medium" },
+  { value: "hard", label: "Hard" },
 ];
 
-const CATEGORIES = [
-    "all", "1cat", "2cat", "3cat"
+
+// TODO: fetch questions from api
+
+const CATEGORIES: Option[] = [
+  { value: "9", label: "General Knowledge" },
+  { value: "10", label: "Entertainment: Books" },
+  {
+      value: "11",
+      label: "Entertainment: Film",
+  },
+  { value: "12", label: "Entertainment: Music" },
+  { value: "13", label: "Entertainment: Musicals & Theatres" },
+  {
+      value: "14",
+      label: "Entertainment: Television",
+  },
+  { value: "15", label: "Entertainment: Video Games" },
+  { value: "16", label: "Entertainment: Board Games" },
+  {
+      value: "17",
+      label: "Science & Nature",
+  },
+  { value: "18", label: "Science: Computers" },
+  { value: "19", label: "Science: Mathematics" },
+  {
+      value: "20",
+      label: "Mythology",
+  },
+  { value: "21", label: "Sports" },
+  { value: "22", label: "Geography" },
+  { value: "23", label: "History" },
+  {
+      value: "24",
+      label: "Politics",
+  },
+  { value: "25", label: "Art" },
+  { value: "26", label: "Celebrities" },
+  { value: "27", label: "Animals" },
+  {
+      value: "28",
+      label: "Vehicles",
+  },
+  { value: "29", label: "Entertainment: Comics" },
+  { value: "30", label: "Science: Gadgets" },
+  {
+      value: "31",
+      label: "Entertainment: Japanese Anime & Manga",
+  },
+  { value: "32", label: "Entertainment: Cartoon & Animations" },
 ];
 
-const TYPES = [
-    "1type"
+const TYPES: Option[] = [
+  { value: "multiple", label: "Multiple choice" },
+  { value: "boolean", label: "True/False" },
 ];
 
-const questions = [
-    { //mb some another format, depends on where we will get questions from
-        qText: "Elon Musk was born in South Africa",
-        answers: {"True": 1, "False": 0},
-        category: "1cat"
-    },
-    {
-        qText: "What country drinks the most coffee per capita?",
-        answers: {"Italy": 0, "Turkey": 0, "Russia": 0, "Finland": 1},
-        category: "2cat"
-    },
-    {
-        qText: "How many bones do we have in an ear?",
-        answers: {"1": 0, "0": 0, "3": 1, "2": 0},
-        category: "3cat"
-    }
-];
-
-export {TIMES, LEVELS, CATEGORIES, TYPES, questions};
+export { TIMES, LEVELS, CATEGORIES, TYPES };

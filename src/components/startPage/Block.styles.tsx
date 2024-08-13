@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 import Select from "react-select";
-import {BasicBlockStyles} from "../../general.styles";
+import { BasicBlockStyles } from "../../general.styles";
 
 const BasicSelectStyles = css`
   &__control {
@@ -39,10 +39,10 @@ const BlockTitle = styled.p`
   color: white;
 `;
 
-const NumberInput = styled.input`
+const NumberInput = styled.input<{ hasError: boolean }>`
   all: unset;
   caret-color: white;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid ${({ hasError }) => (hasError ? 'red' : '#ccc')};
   color: white;
 
   &::-webkit-outer-spin-button,
@@ -52,7 +52,7 @@ const NumberInput = styled.input`
   }
 `;
 
-const StylizedMultiSelect = styled(Select)`
+styled(Select)`
   .Select {
     ${BasicSelectStyles}
     &__multi-value {
@@ -87,10 +87,4 @@ const StylizedSingleSelect = styled(Select)`
   }
 `;
 
-export {
-  BlockTitle,
-  BlockWrapper,
-  NumberInput,
-  StylizedMultiSelect,
-  StylizedSingleSelect,
-};
+export { BlockTitle, BlockWrapper, NumberInput, StylizedSingleSelect };

@@ -8,7 +8,7 @@ const StyledAnswerButton = styled.li`
   color: white;
   height: 8vh;
   border-radius: 10px;
-  font-size: 22px;
+  font-size: 18px;
   font-family: "Gill Sans MT";
   border: none;
   background: linear-gradient(
@@ -16,6 +16,7 @@ const StyledAnswerButton = styled.li`
     rgba(59, 49, 242, 1) 0%,
     rgba(116, 28, 236, 1) 100%
   );
+
   &:hover {
     transition: transform 0.5s;
     transform: scale(1.01);
