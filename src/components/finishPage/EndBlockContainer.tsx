@@ -1,14 +1,19 @@
 import React from "react";
 import EndBlock from "./EndBlock";
 import { EndBlocksContainer } from "./EndBlockGeneral.styles";
+import { useAppSelector } from "../../hooks";
+import { RootState } from "../../store";
 
 const EndBlockContainer = () => {
+  const configuration = useAppSelector(
+    (state: RootState) => state.configuration,
+  );
   return (
     <EndBlocksContainer>
-      <EndBlock title={"Type"} info={"1type"} />
-      <EndBlock title={"Difficulty"} info={"Medium"} />
-      <EndBlock title={"Category"} info={"1cat"} />
-      <EndBlock title={"Time"} info={"5 min"} />
+      <EndBlock title={"Type"} info={configuration.type} />
+      <EndBlock title={"Difficulty"} info={configuration.difficulty} />
+      <EndBlock title={"Category"} info={configuration.category} />
+      <EndBlock title={"Time"} info={configuration.time} />
     </EndBlocksContainer>
   );
 };

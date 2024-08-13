@@ -1,26 +1,22 @@
 import React from "react";
-import Timer from "../components/quizPage/Timer";
 import { MainWrapper } from "../general.styles";
 import EndBlockContainer from "../components/finishPage/EndBlockContainer";
 import EndButtonsContainer from "../components/finishPage/EndButtonsContainer";
 import { Gratitude, Result } from "./FinishPage.styles";
+import { useAppSelector } from "../hooks";
+import { RootState } from "../store";
+import TimerDisplay from "../components/quizPage/TimerDisplay";
 
-interface FinishPageProps {
-  correctAnswers: number;
-  totalQ: number;
-  timeCompleted: number;
-}
+const FinishPage = () => {
+  const score = useAppSelector((state: RootState) => state.score);
+  const questions = useAppSelector((state: RootState) => state.questions);
+  const time = score.timeSpent;
 
-const FinishPage = ({
-  correctAnswers,
-  totalQ,
-  timeCompleted,
-}: FinishPageProps) => {
   return (
     <MainWrapper>
       <Gratitude>Thank you for completing this quiz!</Gratitude>
-      <Result>{`Your results: ${correctAnswers}/${totalQ}`}</Result>
-      <Timer seconds={timeCompleted} />
+      <Result>{`Your results: ${score.score}/${questions.totalNumber}`}</Result>
+      <TimerDisplay time={time} />
       <EndBlockContainer />
       <EndButtonsContainer />
     </MainWrapper>
