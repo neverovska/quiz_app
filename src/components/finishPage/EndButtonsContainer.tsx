@@ -7,17 +7,37 @@ import {
 import { faRotateLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from "react-router-dom";
+import { useAppDispatch, useAppSelector } from "../../hooks";
+import { resetConfiguration } from "../../slices/configurationSlice";
+import { fetchQuestions, removeQuestions } from "../../slices/questionsSlice";
+import { resetScore } from "../../slices/scoreSlice";
 
 const EndButtonsContainer = () => {
   const navigate = useNavigate();
 
+  const configuration = useAppSelector((state) => state.configuration);
+  const dispatch = useAppDispatch();
+
   const goToStart = () => {
+    dispatch(removeQuestions());
+    dispatch(resetConfiguration());
+    dispatch(resetScore());
     navigate("/");
   };
 
-  const restartQuiz = () =>{
-      navigate("/quiz");
-  }
+  const restartQuiz = () => {
+    dispatch(
+      fetchQuestions({
+        numberOfQuestions: configuration.numberOfQuestions,
+        category: configuration.category,
+        difficulty: configuration.difficulty,
+        type: configuration.type,
+        time: configuration.time,
+      }),
+    );
+    dispatch(resetScore());
+    navigate("/quiz");
+  };
 
   return (
     <EndButtonsContainerStyled>

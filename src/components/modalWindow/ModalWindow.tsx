@@ -8,6 +8,8 @@ import {
   ModalWindowTitle,
 } from "./ModalWindow.styles";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { resetScore } from "../../slices/scoreSlice";
 
 interface ModalWindowProps {
   onClose: () => void;
@@ -15,8 +17,10 @@ interface ModalWindowProps {
 
 const ModalWindow = ({ onClose }: ModalWindowProps) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const goToStart = () => {
+    dispatch(resetScore());
     navigate("/");
   };
   return (

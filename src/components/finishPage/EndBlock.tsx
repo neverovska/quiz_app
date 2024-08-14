@@ -1,17 +1,18 @@
 import React from "react";
 import { EndBlockInfo, EndBlockTitle } from "./EndBlockGeneral.styles";
 import { EndBlockStyled } from "./EndBlockGeneral.styles";
+import { Option } from "../../slices/configurationSlice";
 
 interface EndBlockProp {
   title: string;
-  info: string;
+  info: Option;
 }
 
 const EndBlock = ({ title, info }: EndBlockProp) => {
   return (
     <EndBlockStyled>
       <EndBlockTitle>{title}</EndBlockTitle>
-      <EndBlockInfo>{info}</EndBlockInfo>
+      <EndBlockInfo>{info.label}</EndBlockInfo>
     </EndBlockStyled>
   );
 };

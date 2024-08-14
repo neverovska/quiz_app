@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { BasicButtonStyles } from "../../general.styles";
 
 const RestartButton = styled.button`

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const PageWrapper = styled.div`
   display: flex;
@@ -12,9 +11,5 @@ const MainWrapper = styled.main`
   width: 50%;
 `;
 
-const Icon = styled(FontAwesomeIcon)`
-  margin: 0 5px;
-  color: white;
-`;
 
-export { MainWrapper, Icon, PageWrapper };
+export { MainWrapper, PageWrapper };
