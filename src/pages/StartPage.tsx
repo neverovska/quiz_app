@@ -25,7 +25,7 @@ import {
 import { useAppDispatch, useAppSelector } from "../hooks";
 import { fetchQuestions } from "../slices/questionsSlice";
 
-const selectFilling = (item: Option) => ({
+export const selectFilling = (item: Option) => ({
   value: item.value,
   label: item.label,
 });
@@ -71,23 +71,21 @@ const StartPage = () => {
     }
   };
 
+  const dispatchFunctions = {
+    "Category": setCategory,
+    "Type": setType,
+    "Time": setTime,
+    "Difficulty": setDifficulty
+  };
+
+
   const handleSelectChange = (option: Option, title: string) => {
     if (!option) return;
-    switch (title) {
-      case "Category":
-        dispatch(setCategory(option));
-        break;
-      case "Type":
-        dispatch(setType(option));
-        break;
-      case "Time":
-        dispatch(setTime(option));
-        break;
-      case "Difficulty":
-        dispatch(setDifficulty(option));
-        break;
-      default:
-        break;
+
+    const dispatchFunction = dispatchFunctions[title as keyof typeof dispatchFunctions];
+
+    if (dispatchFunction) {
+      dispatch(dispatchFunction(option));
     }
   };
 
