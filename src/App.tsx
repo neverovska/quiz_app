@@ -5,12 +5,10 @@ import QuizPage from "./pages/QuizPage";
 import FinishPage from "./pages/FinishPage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import StatisticsPage from "./pages/StatisticsPage";
-import { Provider } from "react-redux";
-import { store } from "./store";
 
 function App() {
   return (
-    <Provider store={store}>
+
       <div className="App">
         <BrowserRouter>
           <Routes>
@@ -28,7 +26,7 @@ function App() {
         </BrowserRouter>
       </div>
 
-    </Provider>
+
   );
 }
 

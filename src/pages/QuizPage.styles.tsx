@@ -7,9 +7,4 @@ const PageWrapper = styled.div`
   height: 100vh;
 `;
 
-const MainWrapper = styled.main`
-  width: 50%;
-`;
-
-
-export { MainWrapper, PageWrapper };
+export { PageWrapper };

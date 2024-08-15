@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import { useAppSelector } from "../../hooks";
-import { RootState } from "../../store";
-import { incrementTime } from "../../slices/scoreSlice";
+import { useAppSelector } from "../../redux/hooks";
+import { RootState } from "../../redux/store";
+import { incrementTime } from "../../redux/slices/scoreSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import TimerDisplay from "./TimerDisplay";

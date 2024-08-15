@@ -9,7 +9,7 @@ import {
 } from "./ModalWindow.styles";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { resetScore } from "../../slices/scoreSlice";
+import { resetScore } from "../../redux/slices/scoreSlice";
 
 interface ModalWindowProps {
   onClose: () => void;

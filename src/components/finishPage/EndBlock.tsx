@@ -1,7 +1,7 @@
 import React from "react";
 import { EndBlockInfo, EndBlockTitle } from "./EndBlockGeneral.styles";
 import { EndBlockStyled } from "./EndBlockGeneral.styles";
-import { Option } from "../../slices/configurationSlice";
+import { Option } from "../../redux/slices/configurationSlice";
 
 interface EndBlockProp {
   title: string;

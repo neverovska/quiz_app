@@ -1,17 +1,10 @@
 import React from "react";
 import { BlockWrapper, BlockTitle, StylizedSingleSelect } from "./Block.styles";
-import { Option } from "../../slices/configurationSlice";
-import { useAppDispatch, useAppSelector } from "../../hooks";
+import { Option } from "../../redux/slices/configurationSlice";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { SelectProps } from "../../interfaces";
 
-interface Props {
-  title: string;
-  options: Array<Option>;
-  value: string | undefined;
-
-  handler: (option: Option, title: string) => void;
-}
-
-const BlockWithSelect = ({ title, options, value, handler }: Props) => {
+const BlockWithSelect = ({ title, options, value, handler }: SelectProps) => {
   useAppSelector((state) => state.configuration);
   useAppDispatch();
 

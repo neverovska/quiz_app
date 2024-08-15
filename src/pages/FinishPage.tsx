@@ -3,8 +3,8 @@ import { MainWrapper } from "../general.styles";
 import EndBlockContainer from "../components/finishPage/EndBlockContainer";
 import EndButtonsContainer from "../components/finishPage/EndButtonsContainer";
 import { Gratitude, Result } from "./FinishPage.styles";
-import { useAppSelector } from "../hooks";
-import { RootState } from "../store";
+import {useAppSelector } from "../redux/hooks";
+import { RootState } from "../redux/store";
 import TimerDisplay from "../components/quizPage/TimerDisplay";
 
 const FinishPage = () => {

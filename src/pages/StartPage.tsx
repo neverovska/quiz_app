@@ -11,19 +11,19 @@ import {
   ButtonStart,
 } from "./StartPage.styles";
 import { MainWrapper } from "../general.styles";
-import { TIMES, LEVELS, TYPES, CATEGORIES } from "../consts";
+import { TIMES, DIFFICULTIES, TYPES, CATEGORIES } from "../consts";
 import { useNavigate } from "react-router-dom";
-import { RootState } from "../store";
-import { Option } from "../slices/configurationSlice";
+import { RootState } from "../redux/store";
+import { Option } from "../redux/slices/configurationSlice";
 import {
   setCategory,
   setDifficulty,
   setNumberOfQuestions,
   setTime,
   setType,
-} from "../slices/configurationSlice";
-import { useAppDispatch, useAppSelector } from "../hooks";
-import { fetchQuestions } from "../slices/questionsSlice";
+} from "../redux/slices/configurationSlice";
+import { useAppDispatch, useAppSelector } from "../redux/hooks";
+import { fetchQuestions } from "../redux/slices/questionsSlice";
 
 export const selectFilling = (item: Option) => ({
   value: item.value,
@@ -63,7 +63,7 @@ const StartPage = () => {
     const inputValue = event.target.value;
     const numberValue = Number(inputValue);
 
-    if (numberValue &&(numberValue < 5 || numberValue > 15)) {
+    if (numberValue && (numberValue < 5 || numberValue > 15)) {
       setError(true);
     } else {
       setError(false);
@@ -72,17 +72,17 @@ const StartPage = () => {
   };
 
   const dispatchFunctions = {
-    "Category": setCategory,
-    "Type": setType,
-    "Time": setTime,
-    "Difficulty": setDifficulty
+    Category: setCategory,
+    Type: setType,
+    Time: setTime,
+    Difficulty: setDifficulty,
   };
-
 
   const handleSelectChange = (option: Option, title: string) => {
     if (!option) return;
 
-    const dispatchFunction = dispatchFunctions[title as keyof typeof dispatchFunctions];
+    const dispatchFunction =
+      dispatchFunctions[title as keyof typeof dispatchFunctions];
 
     if (dispatchFunction) {
       dispatch(dispatchFunction(option));
@@ -114,7 +114,7 @@ const StartPage = () => {
         />
         <BlockWithSelect
           title="Difficulty"
-          options={LEVELS.map(selectFilling)}
+          options={DIFFICULTIES.map(selectFilling)}
           value={configuration.difficulty.value}
           handler={handleSelectChange}
         />
@@ -133,7 +133,12 @@ const StartPage = () => {
           hasError={isError}
         />
       </BlocksContainer>
-      <ButtonStart disabled={+configuration.numberOfQuestions === 0} onClick={goToQuiz}>Start quiz</ButtonStart>
+      <ButtonStart
+        disabled={+configuration.numberOfQuestions === 0}
+        onClick={goToQuiz}
+      >
+        Start quiz
+      </ButtonStart>
     </MainWrapper>
   );
 };

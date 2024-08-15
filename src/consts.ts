@@ -1,4 +1,4 @@
-import { Option } from "./slices/configurationSlice";
+import { Option } from "./redux/slices/configurationSlice";
 
 const TIMES: Option[] = [
   { value: "60", label: "1 min" },
@@ -6,7 +6,7 @@ const TIMES: Option[] = [
   { value: "300", label: "5 min" },
 ];
 
-const LEVELS: Option[] = [
+const DIFFICULTIES: Option[] = [
   { value: "easy", label: "Easy" },
   { value: "medium", label: "Medium" },
   { value: "hard", label: "Hard" },
@@ -68,4 +68,4 @@ const TYPES: Option[] = [
   { value: "boolean", label: "True/False" },
 ];
 
-export { TIMES, LEVELS, CATEGORIES, TYPES };
+export { TIMES, DIFFICULTIES, CATEGORIES, TYPES };

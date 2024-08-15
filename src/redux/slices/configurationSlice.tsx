@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { CATEGORIES, LEVELS, TIMES, TYPES } from "../consts";
+import { CATEGORIES, DIFFICULTIES, TIMES, TYPES } from "../../consts";
 
 export interface Option {
   value: string;
@@ -19,7 +19,7 @@ export interface ConfigurationState {
 const initialState: ConfigurationState = {
   numberOfQuestions: "",
   type: TYPES[0],
-  difficulty: LEVELS[0],
+  difficulty: DIFFICULTIES[0],
   category: CATEGORIES[0],
   time: TIMES[0],
 };
