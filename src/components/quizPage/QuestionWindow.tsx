@@ -11,11 +11,18 @@ import { AnswersGroup } from "./QuestionWindow.styles";
 import { StyledAnswerButton } from "./AnswerButton.styles";
 import { useNavigate } from "react-router-dom";
 import { decode } from "html-entities";
-import { useAppDispatch, useAppSelector } from "../../hooks";
-import { RootState } from "../../store";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { RootState } from "../../redux/store";
 import { Question } from "../../interfaces";
-import { scoreIncrement } from "../../slices/scoreSlice";
+import { scoreIncrement } from "../../redux/slices/scoreSlice";
 import ProgressBar from "./ProgressBar";
+import {
+  addCategoryAnswers,
+  addCorrectAnswers,
+  addDifficultyAnswers,
+  addTotalAnswers,
+  addTypeAnswers,
+} from "../../redux/slices/statisticsSlice";
 
 interface QuestionProps {
   questions: Question[];
@@ -45,9 +52,17 @@ const QuestionWindow = ({ questions }: QuestionProps) => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
+  const configuration = useAppSelector((state) => state.configuration);
 
   const goToNext = (answerFlag: boolean) => {
-    answerFlag && dispatch(scoreIncrement());
+    if (answerFlag) {
+      dispatch(scoreIncrement());
+      dispatch(addCorrectAnswers());
+    }
+    dispatch(addTotalAnswers());
+    dispatch(addCategoryAnswers(configuration.category));
+    dispatch(addDifficultyAnswers(configuration.difficulty));
+    dispatch(addTypeAnswers(configuration.type));
     questions.length === currentQ + 1
       ? navigate("/results")
       : setCurrentQ((prev) => prev + 1);
