@@ -7,8 +7,7 @@ import {
 } from "./QuestionWindow.styles";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import ModalWindow from "../modalWindow/ModalWindow";
-import { AnswersGroup } from "./QuestionWindow.styles";
-import { StyledAnswerButton } from "./AnswerButton.styles";
+import { StyledAnswerButton, AnswersGroup } from "./QuestionWindow.styles";
 import { useNavigate } from "react-router-dom";
 import { decode } from "html-entities";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";

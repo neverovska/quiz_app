@@ -46,15 +46,12 @@ const statisticsSlice = createSlice({
     },
     addCategoryAnswers: (state, action: PayloadAction<Option>) => {
       state.categoryAnswers[action.payload.value]++;
-      console.log(state.categoryAnswers[action.payload.value]);
     },
     addDifficultyAnswers: (state, action: PayloadAction<Option>) => {
       state.difficultyAnswers[action.payload.value]++;
-      console.log(state.difficultyAnswers[action.payload.value]);
     },
     addTypeAnswers: (state, action: PayloadAction<Option>) => {
       state.typeAnswers[action.payload.value]++;
-      console.log(state.typeAnswers[action.payload.value]);
     },
   },
 });

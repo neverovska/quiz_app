@@ -55,7 +55,6 @@ const StartPage = () => {
   );
   const dispatch = useAppDispatch();
 
-  //TODO: take a look here, mb move to child
 
   const handleNumberOfQuestionsChange = (
     event: React.ChangeEvent<HTMLInputElement>,

@@ -6,8 +6,6 @@ export interface Option {
   label: string;
 }
 
-//TODO: take a look at time, mb better solution?
-
 export interface ConfigurationState {
   numberOfQuestions: string;
   type: Option;
