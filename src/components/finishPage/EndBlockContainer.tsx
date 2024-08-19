@@ -1,8 +1,8 @@
 import React from "react";
 import EndBlock from "./EndBlock";
 import { EndBlocksContainer } from "./EndBlockGeneral.styles";
-import { useAppSelector } from "../../hooks";
-import { RootState } from "../../store";
+import { useAppSelector } from "../../redux/hooks";
+import { RootState } from "../../redux/store";
 
 const EndBlockContainer = () => {
   const configuration = useAppSelector(

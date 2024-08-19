@@ -4,7 +4,7 @@ import {
   createAsyncThunk,
   AsyncThunk,
 } from "@reduxjs/toolkit";
-import { Question } from "../interfaces";
+import { Question } from "../../interfaces";
 import { AppDispatch, RootState } from "../store";
 import { ConfigurationState } from "./configurationSlice";
 

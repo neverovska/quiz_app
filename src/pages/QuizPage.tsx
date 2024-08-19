@@ -1,24 +1,26 @@
 import React from "react";
-import { MainWrapper, PageWrapper } from "./QuizPage.styles";
+import { PageWrapper } from "./QuizPage.styles";
 import TimerLogic from "../components/quizPage/TimerLogic";
-import { RootState } from "../store";
-import { useAppSelector } from "../hooks";
+import { RootState } from "../redux/store";
+import { useAppSelector } from "../redux/hooks";
 import QuestionWindow from "../components/quizPage/QuestionWindow";
+import Error from "../components/utils/Error";
+import Loading from "../components/utils/Loading";
+import { MainWrapper } from "../general.styles";
 
 const QuizPage = () => {
   const { questions, loading, error } = useAppSelector(
     (state: RootState) => state.questions,
   );
 
-  //TODO: add UI
   if (loading) {
-    return <div> Loading...</div>;
+    return <Loading />;
   }
   if (error) {
-    return <div>Error :(</div>;
+    return <Error text={`Sorry\n Error :(`} />;
   }
   if (questions.length === 0) {
-    return <div>No questions available in such configuration</div>;
+    return <Error text={`No questions available in such configuration`} />;
   }
   return (
     <PageWrapper>
