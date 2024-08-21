@@ -22,6 +22,8 @@ import {
   addTotalAnswers,
   addTypeAnswers,
 } from "../../redux/slices/statisticsSlice";
+import { motion } from "framer-motion";
+import { questionVariants } from "../../framer motion/animations";
 
 interface QuestionProps {
   questions: Question[];
@@ -52,6 +54,7 @@ const QuestionWindow = ({ questions }: QuestionProps) => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const configuration = useAppSelector((state) => state.configuration);
+  const AnimatedQuestionText= motion(QuestionText);
 
   const goToNext = (answerFlag: boolean) => {
     if (answerFlag) {
@@ -75,7 +78,11 @@ const QuestionWindow = ({ questions }: QuestionProps) => {
         <IconExit icon={faXmark} onClick={openModal} />
         {isModalOpen && <ModalWindow onClose={closeModal} />}
         <ProgressBar currentQ={currentQ} totalQ={totalQ} />
-        <QuestionText>{decode(questions[currentQ].question)}</QuestionText>
+        <AnimatedQuestionText variants={questionVariants}
+                              initial="initial"
+                              animate="enter"
+                              exit="exit"
+                              transition={{ duration: 0.5, ease: "easeInOut" }}>{decode(questions[currentQ].question)}</AnimatedQuestionText>
       </QuestionWrapper>
       <AnswersGroup count={Object.keys(answers).length}>
         {Object.values(answers).map((answer) => (
