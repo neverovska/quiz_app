@@ -2,12 +2,12 @@ import styled from "styled-components";
 import { BasicBlockStyles } from "../../general.styles";
 
 const EndBlockTitle = styled.p`
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
 `;
 
 const EndBlockInfo = styled.p`
-  font-size: 16px;
+  font-size: 14px;
 `;
 
 const EndBlocksContainer = styled.div`

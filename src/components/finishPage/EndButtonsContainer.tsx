@@ -1,4 +1,4 @@
-import React from "react";
+import React, {forwardRef} from "react";
 import {
   ChooseButton,
   RestartButton,
@@ -12,7 +12,7 @@ import { resetConfiguration } from "../../redux/slices/configurationSlice";
 import { fetchQuestions, removeQuestions } from "../../redux/slices/questionsSlice";
 import { resetScore } from "../../redux/slices/scoreSlice";
 
-const EndButtonsContainer = () => {
+const EndButtonsContainer = forwardRef<HTMLDivElement, {}>((props,ref) => {
   const navigate = useNavigate();
 
   const configuration = useAppSelector((state) => state.configuration);
@@ -40,13 +40,13 @@ const EndButtonsContainer = () => {
   };
 
   return (
-    <EndButtonsContainerStyled>
+    <EndButtonsContainerStyled ref={ref}>
       <RestartButton onClick={restartQuiz}>
         <FontAwesomeIcon icon={faRotateLeft} />
       </RestartButton>
       <ChooseButton onClick={goToStart}>Choose another quiz</ChooseButton>
     </EndButtonsContainerStyled>
   );
-};
+});
 
 export default EndButtonsContainer;

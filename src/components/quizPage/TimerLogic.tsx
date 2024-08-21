@@ -5,8 +5,11 @@ import { incrementTime } from "../../redux/slices/scoreSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import TimerDisplay from "./TimerDisplay";
+import { motion } from "framer-motion";
+import { pulseVariants } from "../../framer motion/animations";
 
 const TimerLogic = () => {
+  const AnimatedTimerDisplay = motion(TimerDisplay);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const timeSpent = useSelector((state: RootState) => state.score.timeSpent);
@@ -27,6 +30,14 @@ const TimerLogic = () => {
     }
   }, [timeLeft, navigate, timeSpent, dispatch]);
   const time = timeLeft - timeSpent;
-  return <TimerDisplay time={time} />;
+  const animationVariant = time <= 10 ? "warning" : "normal";
+  return (
+    <AnimatedTimerDisplay
+      variants={pulseVariants}
+      initial="normal"
+      animate={animationVariant}
+      time={time}
+    />
+  );
 };
 export default TimerLogic;
