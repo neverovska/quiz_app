@@ -1,7 +1,7 @@
-import React from "react";
+import React, {forwardRef} from "react";
 import { BlockWrapper, BlockTitle, NumberInput } from "./Block.styles";
 
-interface Props {
+interface InputProps {
   title: string;
   minQuestions: number;
   maxQuestions: number;
@@ -10,16 +10,16 @@ interface Props {
   hasError: boolean;
 }
 
-const BlockWithInput = ({
+const BlockWithInput = forwardRef<HTMLDivElement, InputProps>(({
   title,
   minQuestions,
   maxQuestions,
   value,
   handler,
   hasError
-}: Props) => {
+}, ref) => {
   return (
-    <BlockWrapper>
+    <BlockWrapper ref={ref}>
       <BlockTitle>{title}</BlockTitle>
       <NumberInput hasError={hasError}
         type="number"
@@ -29,6 +29,6 @@ const BlockWithInput = ({
       />
     </BlockWrapper>
   );
-};
+});
 
 export default BlockWithInput;
