@@ -9,7 +9,7 @@ const BasicPStyles = css`
 const Gratitude = styled.p`
   ${BasicPStyles};
   font-size: 26px;
-  font-weight: normal;
+  font-weight: bolder;
   margin: 10vh 0;
 `;
 
