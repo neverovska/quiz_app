@@ -66,3 +66,19 @@ Statistics screen:
 + Statistics for each difficulty with numbers
 + Statistics for each type with numbers
 
+### Hw8
+Addind fancy animations:
++ Install Framer motion
++ Add animations to main quiz flow
+
+### Hw9
+Migrating project to TS:
++ Add interfaces for all props for all components
++ Add types for all entities that we get from API
++ Verify that there are no TS errors
+
+### Hw10
+Adding tests for application:
++ Install jest library
++ Cover our utility functions with unit tests
++ Add coverage configuration
