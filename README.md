@@ -4,7 +4,7 @@ A simple quiz app built with React and Redux.
 ## Figma Mockup
 https://www.figma.com/design/pKA5WjF6c2mf1YxLStw4jE/quizApp?node-id=0-1&t=aIGX3z26c81txMtl-1
 
-### Hw1
+### 1
 UI for Start page:
 + Number input for “number of questions”(from 5 to 15)
 + Select input for “category”
@@ -14,7 +14,7 @@ UI for Start page:
 + “Start quiz” button
 + “See my stats” button
 
-### Hw2
+### 2
 UI for Quiz page:
 + Question text
 + Progress bar (e.g. “question 3 out of 6)
@@ -22,7 +22,7 @@ UI for Quiz page:
 + Answer buttons (they could be “true” and “false” for true/false questions or they could be in a group of 4, for multiple option questions)
 + Timer element, which count down from specified value
 
-### Hw3
+### 3
 UI for Finish page:
 + General result text
 + Result in numbers of correct answers. 
@@ -31,7 +31,7 @@ UI for Finish page:
 + A button “Restart” which will restart this same quiz with same configuration from the start
 + A button “Choose another quiz” which will navigate the user to quiz configuration screen
 
-### Hw4
+### 4
 Navigation for app:
 + Upon pressing the “Start quiz” button from the first screen we navigate to the main quiz screen. (With mock data for now)
 + Upon pressing the “End quiz” button on the main quiz screen we should see a modal window with some text and 2 buttons - “Cancel” and “Confirm”.
@@ -42,7 +42,7 @@ Navigation for app:
 + On the result screen upon pressing the “Restart quiz” button we need to navigate users to main quiz screen and restart current quiz (with mock data for now)
 + On the configuration scream upon pressing the “See my statistics” button we need to navigate to the newly created empty statistics screen
 
-### HW5  
+### 5  
 Adding logic and state manager to the application:
 + Add Redux Toolkit to our dependencies
 + Upon choosing configuration we need to save this configuration to Redux store (slice) and send a request to Quiz API to get questions with answers before navigating to main quiz screen
@@ -50,7 +50,7 @@ Adding logic and state manager to the application:
 + After user presses “Choose another quiz” button on the result screen we need to clear questions data from Redux store (questions, answers and configuration) before navigating users to configuration screen
 + After user presses “Restart quiz” button we need to send one more API request to get new bunch of questions with same configuration (that we previously stored in Redux store) before navigating users to main quiz screen to restart the quiz with new questions
   
-### HW6 
+### 6 
 Additional logic for after users finish their quiz:
 + Add number of questions that user took in this quiz to overall number of questions user took
 + Add number of correct questions that this user got to overall number of correct questions for this user
@@ -59,25 +59,25 @@ Additional logic for after users finish their quiz:
 + Add the number of questions for each type of question that the user took in this quiz. For example if a user took 10 “True/false” questions, we add 10 to overall number of “True/false” questions
 + All this data has to be stored in the “Statistics” (or “stats”) slice, which we need to persist using the redux-persist library. Other slices do not need to be persisted
 
-### HW7
+### 7
 Statistics screen:
 + Statistics of overall number of questions compared to correct number questions this user took
 + Statistics for each category with numbers
 + Statistics for each difficulty with numbers
 + Statistics for each type with numbers
 
-### Hw8
+### 8
 Addind fancy animations:
 + Install Framer motion
 + Add animations to main quiz flow
 
-### Hw9
+### 9
 Migrating project to TS:
 + Add interfaces for all props for all components
 + Add types for all entities that we get from API
 + Verify that there are no TS errors
 
-### Hw10
+### 10
 Adding tests for application:
 + Install jest library
 + Cover our utility functions with unit tests
